@@ -1,11 +1,13 @@
+import FormHeader from './form/FormHeader';
 import InputLabel from './form/InputLabel';
 import InputSelect from './form/InputSelect';
+import Button from './form/Button';
 
 const AppointmentDetails = () => {
   return (
     <>
-      <h2 className="font-bold	text-xl	my-4">Appointment Details</h2>
-      <span className="w-full border-t-[1px]"></span>
+      <FormHeader>Appointment Details</FormHeader>
+      <hr className="w-full border-t-[1px]"></hr>
       <div className="dropdown">
         <InputLabel>Appointment Type</InputLabel>
         <InputSelect
@@ -20,11 +22,11 @@ const AppointmentDetails = () => {
       </div>
       <div className="textarea">
         <InputLabel>Describe your skin issue</InputLabel>
-        <textarea />
+        <textarea className="w-full h-[100px]" />
       </div>
       <div>
-        <button>Previous</button>
-        <button>Next</button>
+        <Button>Previous</Button>
+        <Button>Next</Button>
       </div>
     </>
   );

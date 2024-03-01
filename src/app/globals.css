@@ -22,7 +22,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.navigation span {
+.navigation hr {
   font-size: 10px;
   color: #bfbdbd;
 }

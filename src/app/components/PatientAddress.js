@@ -2,7 +2,7 @@ const PatientAddress = () => {
   return (
     <>
       <h2>Patient Address</h2>
-      <span className="divider"></span>
+      <hr className="divider"></hr>
 
       <h3>Address</h3>
       <input></input>

@@ -2,7 +2,7 @@ const Consent = () => {
   return (
     <>
       <h2>Consent</h2>
-      <span className="divider"></span>
+      <hr className="divider"></hr>
 
       <input type="checkbox"></input>
       <p>

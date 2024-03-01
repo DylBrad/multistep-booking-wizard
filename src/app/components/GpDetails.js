@@ -2,7 +2,7 @@ const GpDetails = () => {
   return (
     <>
       <h2>GP Contact Details</h2>
-      <span className="divider"></span>
+      <hr className="divider"></hr>
       <div>
         <h3>GP Name</h3>
         <label>First</label>

@@ -38,7 +38,7 @@ const PatientDetails = () => {
           </label>
           <div>
             <input type="checkbox"></input>
-            <p>Yes, I'm over 16 years old</p>
+            <p>Yes, I&apos;m over 16 years old</p>
           </div>
           <div>
             <input type="checkbox"></input>

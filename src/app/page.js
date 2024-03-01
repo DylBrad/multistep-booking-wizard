@@ -14,7 +14,7 @@ export default function Home() {
             <div className="progress">???%</div>
           </div>
         </div>
-        <GpDetails />
+        <AppointmentDetails />
       </div>
     </div>
   );

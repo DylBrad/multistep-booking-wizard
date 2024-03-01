@@ -1,18 +1,25 @@
+import InputLabel from './form/InputLabel';
+import InputSelect from './form/InputSelect';
+
 const AppointmentDetails = () => {
   return (
     <>
-      <h2>Appointment Details</h2>
-      <span className="divider"></span>
+      <h2 className="font-bold	text-xl	my-4">Appointment Details</h2>
+      <span className="w-full border-t-[1px]"></span>
       <div className="dropdown">
-        <label>Appointment Type</label>
-        <input></input>
+        <InputLabel>Appointment Type</InputLabel>
+        <InputSelect
+          options={[{ label: 'Dermatology', value: 'Dermatology' }]}
+        ></InputSelect>
       </div>
       <div className="dropdown">
-        <label>Preferred Location</label>
-        <input></input>
+        <InputLabel>Preferred Location</InputLabel>
+        <InputSelect
+          options={[{ label: 'Carrickmines', value: 'Carrickmines' }]}
+        ></InputSelect>
       </div>
       <div className="textarea">
-        <label>Describe your skin issue</label>
+        <InputLabel>Describe your skin issue</InputLabel>
         <textarea />
       </div>
       <div>

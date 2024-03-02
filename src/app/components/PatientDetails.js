@@ -10,7 +10,7 @@ const PatientDetails = () => {
       <hr className="divider"></hr>
       <InputTitle>Name</InputTitle>
 
-      <div className="flex justify-between	">
+      <div className="flex justify-between">
         <div className="w-[48%]">
           <label>First</label>
           <Input></Input>
@@ -25,7 +25,7 @@ const PatientDetails = () => {
         Email <span>(Required)</span>
       </InputTitle>
 
-      <div className="flex justify-between	">
+      <div className="flex justify-between">
         <div className="w-[48%]">
           <label>Enter Email</label>
           <Input></Input>

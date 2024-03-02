@@ -8,15 +8,6 @@ const AppointmentDetails = ({
   description,
   updateFormData,
 }) => {
-  // const getLocation = () => {
-  //   const locationDropdown = document.getElementById('loc');
-  //   locationDropdown.addEventListener('change', function () {
-  //     const selectedOption = locationDropdown.value;
-
-  //     console.log('Selected option:', selectedOption);
-  //     updateFormData({ appointmentLocation: selectedOption });
-  //   });
-  // };
   return (
     <>
       <FormHeader>Appointment Details</FormHeader>

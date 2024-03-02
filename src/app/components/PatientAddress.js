@@ -27,6 +27,9 @@ const PatientAddress = () => {
           options={[{ label: 'Carrickmines', value: 'Carrickmines' }]}
         ></InputSelect>
         <label>Country</label>
+        <InputSelect
+          options={[{ label: 'Ireland', value: 'Ireland' }]}
+        ></InputSelect>
       </div>
     </>
   );

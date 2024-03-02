@@ -7,8 +7,30 @@ import PatientAddress from './components/PatientAddress';
 import Consent from './components/Consent';
 import Button from './components/form/Button';
 
+const FORM_DATA = {
+  appointmentType: '',
+  appointmentLocation: '',
+  description: '',
+  patientFirstName: '',
+  patientLastName: '',
+  patientEmail: '',
+  patientPhone: '',
+  patientDOB: '',
+  patientOver16: null,
+  patientAddress: '',
+  gpFirstName: '',
+  gpLastName: '',
+  gpAddress: '',
+  medicalInsurer: '',
+  vhiPolicyNumber: '',
+  constentAppointmentProccess: null,
+  constentPrivacyPolicy: null,
+  constentDataSharing: null,
+};
+
 export default function Home() {
-  const [step, setStep] = React.useState(2);
+  const [step, setStep] = React.useState(1);
+  const [data, setData] = React.useState(FORM_DATA);
 
   const progressBarWidth = {
     1: 'w-[20%]',
@@ -22,11 +44,16 @@ export default function Home() {
     setStep(step + 1);
   };
 
-  const goToPreviousStep = () => {
+  const goToPreviousStep = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setStep(step - 1);
   };
 
-  const onSubmit = () => {};
+  const onSubmit = (e) => {
+    e.preventDefault();
+    goToNextStep();
+  };
 
   return (
     <div className="App">
@@ -41,34 +68,34 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {step === 1 && <AppointmentDetails goToNextStep={goToNextStep} />}
-        {step === 2 && <PatientDetails />}
-        {step === 3 && <PatientAddress />}
-        {step === 4 && (
-          <GpDetails
-            goToNextStep={goToNextStep}
-            goToPreviousStep={goToPreviousStep}
-          />
-        )}
-        {step === 5 && <Consent />}
-        <div>
-          {step > 1 && (
-            <Button bg={'bg-cyan-400'} onClick={goToPreviousStep}>
-              Previous
-            </Button>
-          )}
-          {step < 5 && (
-            <Button bg={'bg-blue-900'} onClick={goToNextStep}>
-              Next
-            </Button>
-          )}
-          {step === 5 && (
-            <Button bg={'bg-blue-900'} onClick={onSubmit}>
-              Submit
-            </Button>
-          )}
-        </div>
+        <form onSubmit={onSubmit}>
+          {step === 1 && <AppointmentDetails goToNextStep={goToNextStep} />}
+          {step === 2 && <PatientDetails />}
+          {step === 3 && <PatientAddress />}
+          {step === 4 && <GpDetails />}
+          {step === 5 && <Consent />}
+          <div>
+            {step > 1 && (
+              <Button
+                type="button"
+                bg={'bg-cyan-400'}
+                onClick={goToPreviousStep}
+              >
+                Previous
+              </Button>
+            )}
+            {step < 5 && (
+              <Button type="submit" bg={'bg-blue-900'}>
+                Next
+              </Button>
+            )}
+            {step === 5 && (
+              <Button type="submit" bg={'bg-blue-900'}>
+                Submit
+              </Button>
+            )}
+          </div>
+        </form>
       </div>
     </div>
   );

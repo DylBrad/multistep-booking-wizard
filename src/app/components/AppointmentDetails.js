@@ -2,6 +2,8 @@ import FormHeader from './form/FormHeader';
 import InputTitle from './form/InputTitle';
 import InputSelect from './form/InputSelect';
 
+// import { useForm } from 'react-hook-form';
+
 const AppointmentDetails = () => {
   return (
     <>
@@ -10,6 +12,7 @@ const AppointmentDetails = () => {
       <div className="dropdown">
         <InputTitle>Appointment Type</InputTitle>
         <InputSelect
+          required
           options={[{ label: 'Dermatology', value: 'Dermatology' }]}
         ></InputSelect>
       </div>
@@ -21,7 +24,7 @@ const AppointmentDetails = () => {
       </div>
       <div className="textarea">
         <InputTitle>Describe your skin issue</InputTitle>
-        <textarea className="w-full h-[100px]" />
+        <textarea required className="w-full h-[100px]" />
       </div>
     </>
   );

@@ -21,7 +21,7 @@ const GpDetails = () => {
         </div>
       </div>
       <div className="textarea">
-        <InputTitle>Describe your skin issue</InputTitle>
+        <InputTitle>GP Clinic Address</InputTitle>
         <textarea className="w-full h-[100px]" />
       </div>
 

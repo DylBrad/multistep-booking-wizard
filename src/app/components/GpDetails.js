@@ -1,8 +1,23 @@
+import * as React from 'react';
 import FormHeader from './form/FormHeader';
 import Input from './form/Input';
 import InputTitle from './form/InputTitle';
 
-const GpDetails = () => {
+const GpDetails = ({
+  updateFormData,
+  gpFirstName,
+  gpLastName,
+  gpAddress,
+  medicalInsurer,
+  vhiPolicyNumber,
+}) => {
+  const [selectedMedicalInsurer, setSelectedMedicalInsurer] =
+    React.useState(medicalInsurer);
+
+  const handleRadioSelect = (insurer) => {
+    setSelectedMedicalInsurer(insurer);
+    updateFormData({ medicalInsurer: insurer });
+  };
   return (
     <>
       <FormHeader>GP Contact Details</FormHeader>
@@ -11,18 +26,31 @@ const GpDetails = () => {
         <InputTitle>GP Name</InputTitle>
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <Input />
+            <Input
+              type={'text'}
+              value={gpFirstName}
+              onChange={(value) => updateFormData({ gpFirstName: value })}
+            />
             <label>First</label>
           </div>
           <div>
-            <Input />
+            <Input
+              type={'text'}
+              value={gpLastName}
+              onChange={(value) => updateFormData({ gpLastName: value })}
+            />
             <label>Last</label>
           </div>
         </div>
       </div>
       <div className="textarea">
         <InputTitle>GP Clinic Address</InputTitle>
-        <textarea className="w-full h-[100px]" />
+        <textarea
+          required
+          value={gpAddress}
+          onChange={(e) => updateFormData({ gpAddress: e.target.value })}
+          className="w-full h-[100px]"
+        />
       </div>
 
       <FormHeader>Medical Insurance Details</FormHeader>
@@ -32,29 +60,58 @@ const GpDetails = () => {
       <div className="flex flex-col">
         <InputTitle>Medical Insurer</InputTitle>
         <div>
-          <input type="radio" id="vhi"></input>
+          <input
+            type="radio"
+            id="vhi"
+            checked={selectedMedicalInsurer === 'vhi'}
+            onChange={() => handleRadioSelect('vhi')}
+          ></input>
           <label id="vhi">VHI Healthcare</label>
         </div>{' '}
         <div>
-          <input type="radio" id="irish-life"></input>
+          <input
+            type="radio"
+            id="irish-life"
+            checked={selectedMedicalInsurer === 'irish-life'}
+            onChange={() => handleRadioSelect('irish-life')}
+          ></input>
           <label id="irish-life">Irish Life Health</label>
         </div>{' '}
         <div>
-          <input type="radio" id="laya"></input>
+          <input
+            type="radio"
+            id="laya"
+            checked={selectedMedicalInsurer === 'laya'}
+            onChange={() => handleRadioSelect('laya')}
+          ></input>
           <label id="laya">Laya Healthcare</label>
         </div>{' '}
         <div>
-          <input type="radio" id="other"></input>
+          <input
+            type="radio"
+            id="other"
+            checked={selectedMedicalInsurer === 'other'}
+            onChange={() => handleRadioSelect('other')}
+          ></input>
           <label>Other</label>
         </div>{' '}
         <div>
-          <input type="radio" id="none"></input>
+          <input
+            type="radio"
+            id="none"
+            checked={selectedMedicalInsurer === 'none'}
+            onChange={() => handleRadioSelect('none')}
+          ></input>
           <label id="none">None</label>
         </div>
       </div>
       <div>
         <InputTitle>VHI Policy Number</InputTitle>
-        <Input></Input>
+        <Input
+          type={'text'}
+          value={vhiPolicyNumber}
+          onChange={(value) => updateFormData({ vhiPolicyNumber: value })}
+        ></Input>
       </div>
     </>
   );

@@ -48,20 +48,20 @@ const PatientDetails = ({
 
       <div className="flex justify-between">
         <div className="w-[48%]">
-          <label>First</label>
           <Input
             type={'text'}
             value={patientFirstName}
             onChange={(value) => updateFormData({ patientFirstName: value })}
-          ></Input>
+          ></Input>{' '}
+          <label>First</label>
         </div>
         <div className="w-[48%]">
-          <label>Last</label>
           <Input
             type={'text'}
             value={patientLastName}
             onChange={(value) => updateFormData({ patientLastName: value })}
-          ></Input>
+          ></Input>{' '}
+          <label>Last</label>
         </div>
       </div>
 
@@ -71,24 +71,24 @@ const PatientDetails = ({
 
       <div className="flex justify-between">
         <div className="w-[48%]">
-          <label>Enter Email</label>
           <Input
             type={'email'}
             value={patientEmail}
             onChange={(value) => updateFormData({ patientEmail: value })}
-          ></Input>
+          ></Input>{' '}
+          <label>Enter Email</label>
         </div>
 
         <div className="w-[48%]">
-          <label>Confirm Email</label>
           <Input
             type={'email'}
             value={patientEmailConfirm}
             onChange={(value) => updateFormData({ patientEmailConfirm: value })}
-          ></Input>
+          ></Input>{' '}
+          <label>Confirm Email</label>
         </div>
       </div>
-      <div>
+      <div className="mb-[16px]">
         <InputTitle>Phone</InputTitle>
         <Input
           type={'number'}

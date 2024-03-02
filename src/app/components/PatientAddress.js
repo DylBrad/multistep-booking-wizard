@@ -44,42 +44,50 @@ const PatientAddress = ({ updateFormData, patientAddress }) => {
         onChange={(value) => handleChange('streetAddress2', value)}
       ></Input>
       <label>Address Line 2</label>
-      <div>
-        <Input
-          type={'text'}
-          value={patientAddress.city}
-          onChange={(value) => handleChange('city', value)}
-        ></Input>
-        <label>City</label>
-        <Input
-          type={'text'}
-          value={patientAddress.county}
-          onChange={(value) => handleChange('county', value)}
-        ></Input>
-        <label>County</label>
+      <div className="grid grid-cols-2 gap-2">
+        <div>
+          <Input
+            type={'text'}
+            value={patientAddress.city}
+            onChange={(value) => handleChange('city', value)}
+          ></Input>
+          <label>City</label>
+        </div>
+        <div>
+          <Input
+            type={'text'}
+            value={patientAddress.county}
+            onChange={(value) => handleChange('county', value)}
+          ></Input>
+          <label>County</label>
+        </div>
       </div>
-      <div>
-        <Input
-          type={'text'}
-          value={patientAddress.eircode}
-          onChange={(value) => handleChange('eircode', value)}
-        ></Input>
-        <label>Eircode</label>
+      <div className="grid grid-cols-2 gap-2">
+        <div>
+          <Input
+            type={'text'}
+            value={patientAddress.eircode}
+            onChange={(value) => handleChange('eircode', value)}
+          ></Input>
+          <label>Eircode</label>
+        </div>
 
-        <select
-          required
-          id="country"
-          value={patientAddress.country}
-          onChange={captureData}
-          className="text-sm my-1 text-zinc-400 w-full p-2"
-        >
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <label>Country</label>
+        <div>
+          <select
+            required
+            id="country"
+            value={patientAddress.country}
+            onChange={captureData}
+            className="text-sm my-1 text-zinc-400 w-full p-2"
+          >
+            {options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <label>Country</label>
+        </div>
       </div>
     </>
   );

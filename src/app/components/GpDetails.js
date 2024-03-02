@@ -57,7 +57,7 @@ const GpDetails = ({
       <hr className="divider"></hr>
 
       <span className="divider"></span>
-      <div className="flex flex-col">
+      <div className="gp-radios flex flex-col">
         <InputTitle>Medical Insurer</InputTitle>
         <div>
           <input
@@ -65,6 +65,7 @@ const GpDetails = ({
             id="vhi"
             checked={selectedMedicalInsurer === 'vhi'}
             onChange={() => handleRadioSelect('vhi')}
+            className="mr-2"
           ></input>
           <label id="vhi">VHI Healthcare</label>
         </div>{' '}
@@ -74,6 +75,7 @@ const GpDetails = ({
             id="irish-life"
             checked={selectedMedicalInsurer === 'irish-life'}
             onChange={() => handleRadioSelect('irish-life')}
+            className="mr-2"
           ></input>
           <label id="irish-life">Irish Life Health</label>
         </div>{' '}
@@ -83,6 +85,7 @@ const GpDetails = ({
             id="laya"
             checked={selectedMedicalInsurer === 'laya'}
             onChange={() => handleRadioSelect('laya')}
+            className="mr-2"
           ></input>
           <label id="laya">Laya Healthcare</label>
         </div>{' '}
@@ -92,6 +95,7 @@ const GpDetails = ({
             id="other"
             checked={selectedMedicalInsurer === 'other'}
             onChange={() => handleRadioSelect('other')}
+            className="mr-2"
           ></input>
           <label>Other</label>
         </div>{' '}
@@ -101,11 +105,12 @@ const GpDetails = ({
             id="none"
             checked={selectedMedicalInsurer === 'none'}
             onChange={() => handleRadioSelect('none')}
+            className="mr-2"
           ></input>
           <label id="none">None</label>
         </div>
       </div>
-      <div>
+      <div className="mb-[20px]">
         <InputTitle>VHI Policy Number</InputTitle>
         <Input
           type={'text'}

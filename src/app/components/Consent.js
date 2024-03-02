@@ -34,7 +34,7 @@ const Consent = ({
       <FormHeader>Consent</FormHeader>
       <hr className="divider"></hr>
 
-      <div className="my-2 flex text-[11px]">
+      <div className="my-8 flex text-[11px]">
         <input
           type="checkbox"
           className="mr-2"
@@ -47,7 +47,7 @@ const Consent = ({
           <span className="text-cyan-400 underline">Appointment Proccess</span>
         </p>
       </div>
-      <div className="my-2 flex text-[11px]">
+      <div className="my-8 flex text-[11px]">
         <input
           type="checkbox"
           className="mr-2"
@@ -60,7 +60,7 @@ const Consent = ({
           <span className="text-cyan-400 underline">Privacy Policy</span>
         </p>
       </div>
-      <div className="my-2 flex text-[11px]">
+      <div className="my-8 flex text-[11px]">
         <input
           type="checkbox"
           className="mr-2"
@@ -71,7 +71,7 @@ const Consent = ({
         <p>Consent to sharing your data with VHI healthcare</p>
       </div>
 
-      <p className="text-[11px]">
+      <p className="text-[11px] mb-8">
         AllView Healthcare and VHI Healthcare are two separate entities involved
         in the provision of this healthcare service. As part of your medical
         treatment, it may be necessary to share you personal and medical

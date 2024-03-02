@@ -12,7 +12,7 @@ const AppointmentDetails = ({
     <>
       <FormHeader>Appointment Details</FormHeader>
       <hr className="w-full border-t-[1px]"></hr>
-      <div className="dropdown">
+      <div className="dropdown mb-[24px]">
         <InputTitle>Appointment Type</InputTitle>
         <InputSelect
           id="appType"
@@ -25,7 +25,7 @@ const AppointmentDetails = ({
           field={'appointmentType'}
         ></InputSelect>
       </div>
-      <div className="dropdown">
+      <div className="dropdown  mb-[24px]">
         <InputTitle>Preferred Location</InputTitle>
         <InputSelect
           id="loc"
@@ -38,7 +38,7 @@ const AppointmentDetails = ({
           field={'appointmentLocation'}
         ></InputSelect>
       </div>
-      <div className="textarea">
+      <div className="textarea  mb-[24px]">
         <InputTitle>Describe your skin issue</InputTitle>
         <textarea
           required

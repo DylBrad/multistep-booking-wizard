@@ -15,7 +15,7 @@ const PatientDetails = ({
   patientOver16,
   updateFormData,
 }) => {
-  const [isOver16, setIsOver16] = useState(true);
+  const [isOver16, setIsOver16] = useState(null);
   const [value, setValue] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11),
@@ -119,7 +119,7 @@ const PatientDetails = ({
             <input
               type="checkbox"
               name="over16"
-              checked={isOver16}
+              checked={isOver16 === true}
               onChange={handleCheckboxChange}
               className="mr-2"
             ></input>{' '}
@@ -129,7 +129,7 @@ const PatientDetails = ({
             <input
               type="checkbox"
               name="under16"
-              checked={!isOver16}
+              checked={isOver16 === false}
               onChange={handleCheckboxChange}
               className="mr-2"
             ></input>{' '}

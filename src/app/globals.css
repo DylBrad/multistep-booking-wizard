@@ -39,7 +39,6 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid lightgray;
-  margin: 80px 0;
 }
 
 .progress-container {

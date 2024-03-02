@@ -2,7 +2,6 @@ import FormHeader from './form/FormHeader';
 import Input from './form/Input';
 import InputSelect from './form/InputSelect';
 import InputTitle from './form/InputTitle';
-import Button from './form/Button';
 
 const PatientAddress = () => {
   return (
@@ -28,10 +27,6 @@ const PatientAddress = () => {
           options={[{ label: 'Carrickmines', value: 'Carrickmines' }]}
         ></InputSelect>
         <label>Country</label>
-      </div>
-      <div>
-        <Button>Previous</Button>
-        <Button>Next</Button>
       </div>
     </>
   );

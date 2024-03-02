@@ -5,9 +5,10 @@ import PatientDetails from './components/PatientDetails';
 import GpDetails from './components/GpDetails';
 import PatientAddress from './components/PatientAddress';
 import Consent from './components/Consent';
+import Button from './components/form/Button';
 
 export default function Home() {
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(2);
 
   const progressBarWidth = {
     1: 'w-[20%]',
@@ -16,6 +17,17 @@ export default function Home() {
     4: 'w-[80%]',
     5: 'w-full',
   };
+
+  const goToNextStep = () => {
+    setStep(step + 1);
+  };
+
+  const goToPreviousStep = () => {
+    setStep(step - 1);
+  };
+
+  const onSubmit = () => {};
+
   return (
     <div className="App">
       <div className="form-wrapper">
@@ -30,11 +42,33 @@ export default function Home() {
           </div>
         </div>
 
-        {step === 1 && <AppointmentDetails />}
+        {step === 1 && <AppointmentDetails goToNextStep={goToNextStep} />}
         {step === 2 && <PatientDetails />}
         {step === 3 && <PatientAddress />}
-        {step === 4 && <GpDetails />}
+        {step === 4 && (
+          <GpDetails
+            goToNextStep={goToNextStep}
+            goToPreviousStep={goToPreviousStep}
+          />
+        )}
         {step === 5 && <Consent />}
+        <div>
+          {step > 1 && (
+            <Button bg={'bg-cyan-400'} onClick={goToPreviousStep}>
+              Previous
+            </Button>
+          )}
+          {step < 5 && (
+            <Button bg={'bg-blue-900'} onClick={goToNextStep}>
+              Next
+            </Button>
+          )}
+          {step === 5 && (
+            <Button bg={'bg-blue-900'} onClick={onSubmit}>
+              Submit
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );

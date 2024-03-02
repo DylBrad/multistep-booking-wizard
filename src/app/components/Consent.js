@@ -32,11 +32,6 @@ const Consent = () => {
         information between these two companies to ensure the continuity and
         quality of your care.
       </p>
-
-      <div>
-        <button>Previous</button>
-        <button>Submit</button>
-      </div>
     </>
   );
 };

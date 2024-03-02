@@ -1,9 +1,21 @@
+import React, { useState } from 'react';
+import Datepicker from 'react-tailwindcss-datepicker';
+
 import FormHeader from './form/FormHeader';
 import InputTitle from './form/InputTitle';
 import Input from './form/Input';
-import Button from './form/Button';
 
 const PatientDetails = () => {
+  const [value, setValue] = useState({
+    startDate: new Date(),
+    endDate: new Date().setMonth(11),
+  });
+
+  const handleValueChange = (newValue) => {
+    console.log('newValue:', newValue);
+    setValue(newValue);
+  };
+
   return (
     <>
       <FormHeader>Patient Contact Details</FormHeader>
@@ -44,9 +56,12 @@ const PatientDetails = () => {
         <div className="w-[48%]">
           <InputTitle>Date Of Birth</InputTitle>
           <div>
-            <Input></Input>
-            <Input></Input>
-            <Input></Input>
+            <Datepicker
+              primaryColor={'cyan'}
+              value={value}
+              onChange={handleValueChange}
+              showShortcuts={true}
+            />
           </div>
         </div>
         <div className="w-[48%]">
@@ -62,10 +77,6 @@ const PatientDetails = () => {
             <p>The patient is less than 16 years old</p>
           </div>
         </div>
-      </div>
-      <div>
-        <Button>Previous</Button>
-        <Button>Next</Button>
       </div>
     </>
   );

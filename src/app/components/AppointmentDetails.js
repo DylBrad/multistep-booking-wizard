@@ -1,7 +1,6 @@
 import FormHeader from './form/FormHeader';
 import InputTitle from './form/InputTitle';
 import InputSelect from './form/InputSelect';
-import Button from './form/Button';
 
 const AppointmentDetails = () => {
   return (
@@ -23,10 +22,6 @@ const AppointmentDetails = () => {
       <div className="textarea">
         <InputTitle>Describe your skin issue</InputTitle>
         <textarea className="w-full h-[100px]" />
-      </div>
-      <div>
-        <Button>Previous</Button>
-        <Button>Next</Button>
       </div>
     </>
   );

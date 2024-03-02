@@ -1,7 +1,6 @@
 import FormHeader from './form/FormHeader';
 import Input from './form/Input';
 import InputTitle from './form/InputTitle';
-import Button from './form/Button';
 
 const GpDetails = () => {
   return (
@@ -56,11 +55,6 @@ const GpDetails = () => {
       <div>
         <InputTitle>VHI Policy Number</InputTitle>
         <Input></Input>
-      </div>
-
-      <div>
-        <Button>Previous</Button>
-        <Button>Next</Button>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import FormHeader from './form/FormHeader';
-import InputLabel from './form/InputLabel';
+import InputTitle from './form/InputTitle';
 import InputSelect from './form/InputSelect';
 import Button from './form/Button';
 
@@ -9,19 +9,19 @@ const AppointmentDetails = () => {
       <FormHeader>Appointment Details</FormHeader>
       <hr className="w-full border-t-[1px]"></hr>
       <div className="dropdown">
-        <InputLabel>Appointment Type</InputLabel>
+        <InputTitle>Appointment Type</InputTitle>
         <InputSelect
           options={[{ label: 'Dermatology', value: 'Dermatology' }]}
         ></InputSelect>
       </div>
       <div className="dropdown">
-        <InputLabel>Preferred Location</InputLabel>
+        <InputTitle>Preferred Location</InputTitle>
         <InputSelect
           options={[{ label: 'Carrickmines', value: 'Carrickmines' }]}
         ></InputSelect>
       </div>
       <div className="textarea">
-        <InputLabel>Describe your skin issue</InputLabel>
+        <InputTitle>Describe your skin issue</InputTitle>
         <textarea className="w-full h-[100px]" />
       </div>
       <div>

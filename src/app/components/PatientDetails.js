@@ -1,54 +1,71 @@
+import FormHeader from './form/FormHeader';
+import InputTitle from './form/InputTitle';
+import Input from './form/Input';
+import Button from './form/Button';
+
 const PatientDetails = () => {
   return (
     <>
-      <h2>Patient Contact Details</h2>
+      <FormHeader>Patient Contact Details</FormHeader>
       <hr className="divider"></hr>
-      <div>
-        <h3>Name</h3>
-        <label>First</label>
-        <input></input>
-        <label>Last</label>
-        <input></input>
+      <InputTitle>Name</InputTitle>
+
+      <div className="flex justify-between	">
+        <div className="w-[48%]">
+          <label>First</label>
+          <Input></Input>
+        </div>
+        <div className="w-[48%]">
+          <label>Last</label>
+          <Input></Input>
+        </div>
+      </div>
+
+      <InputTitle>
+        Email <span>(Required)</span>
+      </InputTitle>
+
+      <div className="flex justify-between	">
+        <div className="w-[48%]">
+          <label>Enter Email</label>
+          <Input></Input>
+        </div>
+
+        <div className="w-[48%]">
+          <label>Confirm Email</label>
+          <Input></Input>
+        </div>
       </div>
       <div>
-        <h3>
-          Email <span>(Required)</span>
-        </h3>
-        <label>Enter Email</label>
-        <input></input>
-        <label>Confirm Email</label>
-        <input></input>
+        <InputTitle>Phone</InputTitle>
+        <Input></Input>
       </div>
-      <div>
-        <label>Phone</label>
-        <input></input>
-      </div>
-      <div>
-        <div>
-          <label>Date Of Birth</label>
+      <div className="flex justify-between	">
+        <div className="w-[48%]">
+          <InputTitle>Date Of Birth</InputTitle>
           <div>
-            <input></input>
-            <input></input>
-            <input></input>
+            <Input></Input>
+            <Input></Input>
+            <Input></Input>
           </div>
         </div>
-        <div>
-          <label>
+        <div className="w-[48%]">
+          <InputTitle>
             Over 16 years old? <span>(Required)</span>
-          </label>
-          <div>
-            <input type="checkbox"></input>
+          </InputTitle>
+          <div className="my-2 flex text-[11px]">
+            <input type="checkbox" className="mr-2"></input>
             <p>Yes, I&apos;m over 16 years old</p>
           </div>
-          <div>
-            <input type="checkbox"></input>
+          <div className="my-2 flex text-[11px]">
+            <input type="checkbox" className="mr-2"></input>
             <p>The patient is less than 16 years old</p>
           </div>
         </div>
       </div>
       <div>
-        <button>Previous</button>
-        <button>Next</button>
+        <Button>Previous</Button>
+        <Button>Next</Button>
       </div>
     </>
   );

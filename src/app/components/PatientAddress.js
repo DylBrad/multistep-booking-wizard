@@ -1,29 +1,37 @@
+import FormHeader from './form/FormHeader';
+import Input from './form/Input';
+import InputSelect from './form/InputSelect';
+import InputTitle from './form/InputTitle';
+import Button from './form/Button';
+
 const PatientAddress = () => {
   return (
     <>
-      <h2>Patient Address</h2>
+      <FormHeader>Patient Address</FormHeader>
       <hr className="divider"></hr>
 
-      <h3>Address</h3>
-      <input></input>
+      <InputTitle>Address</InputTitle>
+      <Input></Input>
       <label>Street Address</label>
-      <input></input>
+      <Input></Input>
       <label>Address Line 2</label>
       <div>
-        <input></input>
+        <Input></Input>
         <label>City</label>
-        <input></input>
+        <Input></Input>
         <label>County</label>
       </div>
       <div>
-        <input></input>
+        <Input></Input>
         <label>Eircode</label>
-        <select></select>
+        <InputSelect
+          options={[{ label: 'Carrickmines', value: 'Carrickmines' }]}
+        ></InputSelect>
         <label>Country</label>
       </div>
       <div>
-        <button>Previous</button>
-        <button>Next</button>
+        <Button>Previous</Button>
+        <Button>Next</Button>
       </div>
     </>
   );

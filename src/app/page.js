@@ -60,7 +60,11 @@ export default function Home() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    goToNextStep();
+    if (step < 5) {
+      goToNextStep();
+    } else if (step === 5) {
+      alert(JSON.stringify(data, null, 2));
+    }
   };
 
   return (

@@ -35,6 +35,11 @@ npm run dev
 - Resueable components were utilised to minimize unnecessary code with inputs that were used in multiple places, such as input and select elements.
 - Refactoring is recommended to convert less utilized elements such as checkboxes into components.
 
-## Details
+**Validation**:
 
-**Data is logged to the console while form is being filled out. Data is also displayed in an alert upon completion of the form.**
+- Email validation was achieved using custom logic and state management.
+- Further validation recommended such as disabling submit button if emails dont match.
+
+**Data Capture**
+
+- Data is logged to the console while form is being filled out. Data is also displayed in an alert upon completion of the form.

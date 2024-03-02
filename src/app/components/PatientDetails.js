@@ -16,6 +16,7 @@ const PatientDetails = ({
   updateFormData,
 }) => {
   const [isOver16, setIsOver16] = useState(null);
+  const [emailIsMatched, setEmailIsMatched] = useState(true);
   const [value, setValue] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11),
@@ -27,6 +28,26 @@ const PatientDetails = ({
 
     setValue(newValue);
     updateFormData({ patientDOB: newValue.endDate });
+  };
+
+  const handleEmailChange = (value) => {
+    updateFormData({ patientEmail: value });
+
+    checkEmailConfirmation(patientEmailConfirm, value);
+  };
+
+  const handleEmailConfirmation = (value) => {
+    updateFormData({ patientEmailConfirm: value });
+
+    checkEmailConfirmation(value, patientEmail);
+  };
+
+  const checkEmailConfirmation = (email1, email2) => {
+    if (email1 === email2) {
+      setEmailIsMatched(true);
+    } else {
+      setEmailIsMatched(false);
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -68,13 +89,18 @@ const PatientDetails = ({
       <InputTitle>
         Email <span>(Required)</span>
       </InputTitle>
+      {!emailIsMatched && (
+        <span className="text-red-500	">
+          Emails do not match. Check email is correct.
+        </span>
+      )}
 
       <div className="flex justify-between">
         <div className="w-[48%]">
           <Input
             type={'email'}
             value={patientEmail}
-            onChange={(value) => updateFormData({ patientEmail: value })}
+            onChange={(value) => handleEmailChange(value)}
           ></Input>{' '}
           <label>Enter Email</label>
         </div>
@@ -83,11 +109,12 @@ const PatientDetails = ({
           <Input
             type={'email'}
             value={patientEmailConfirm}
-            onChange={(value) => updateFormData({ patientEmailConfirm: value })}
+            onChange={(value) => handleEmailConfirmation(value)}
           ></Input>{' '}
           <label>Confirm Email</label>
         </div>
       </div>
+
       <div className="mb-[16px]">
         <InputTitle>Phone</InputTitle>
         <Input

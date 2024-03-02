@@ -36,7 +36,6 @@ const AppointmentDetails = ({
           value={appointmentLocation}
           updateFormData={updateFormData}
           field={'appointmentLocation'}
-          // onChange={getLocation}
         ></InputSelect>
       </div>
       <div className="textarea">

@@ -18,7 +18,7 @@ const FORM_DATA = {
   patientPhone: '',
   patientDOB: '',
   patientOver16: null,
-  patientAddress: '',
+  patientAddress: {},
   gpFirstName: '',
   gpLastName: '',
   gpAddress: '',
@@ -30,7 +30,7 @@ const FORM_DATA = {
 };
 
 export default function Home() {
-  const [step, setStep] = React.useState(3);
+  const [step, setStep] = React.useState(4);
   const [data, setData] = React.useState(FORM_DATA);
 
   const progressBarWidth = {

@@ -40,6 +40,13 @@ export default function Home() {
     5: 'w-full',
   };
 
+  const updateFormData = (updates) => {
+    console.log(data);
+    setData((prev) => {
+      return { ...prev, ...updates };
+    });
+  };
+
   const goToNextStep = () => {
     setStep(step + 1);
   };
@@ -69,11 +76,19 @@ export default function Home() {
           </div>
         </div>
         <form onSubmit={onSubmit}>
-          {step === 1 && <AppointmentDetails goToNextStep={goToNextStep} />}
-          {step === 2 && <PatientDetails />}
-          {step === 3 && <PatientAddress />}
-          {step === 4 && <GpDetails />}
-          {step === 5 && <Consent />}
+          {step === 1 && (
+            <AppointmentDetails {...data} updateFormData={updateFormData} />
+          )}
+          {step === 2 && (
+            <PatientDetails {...data} updateFormData={updateFormData} />
+          )}
+          {step === 3 && (
+            <PatientAddress {...data} updateFormData={updateFormData} />
+          )}
+          {step === 4 && (
+            <GpDetails {...data} updateFormData={updateFormData} />
+          )}
+          {step === 5 && <Consent {...data} updateFormData={updateFormData} />}
           <div>
             {step > 1 && (
               <Button
